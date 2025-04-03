@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Insulin Dosage Calculator</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Google Fonts and Font Awesome for icons -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <section class="hero">
+    <div class="overlay"></div>
+    <div class="container">
+      <header>
+        <h1>Insulin Dosage Calculator</h1>
+        <p>Calculate your daily insulin doses and correction factor with precision.</p>
+        <p>Find out how much your blood glucose is reduced per unit of insulin based on your daily insulin doses.</p>
+      </header>
+      
+      <div class="calculator">
+        <div class="calc-section">
+          <h2><i class="fa-solid fa-prescription-bottle"></i> Total Insulin Calculator</h2>
+          <div class="form-group">
+            <label for="breakfast">Breakfast Dosage:</label>
+            <input type="number" id="breakfast" placeholder="e.g., 10">
+          </div>
+          <div class="form-group">
+            <label for="lunch">Lunch Dosage:</label>
+            <input type="number" id="lunch" placeholder="e.g., 10">
+          </div>
+          <div class="form-group">
+            <label for="snacks">Snack Dosage:</label>
+            <input type="number" id="snacks" placeholder="e.g., 10">
+          </div>
+          <div class="form-group">
+            <label for="dinner">Dinner Dosage:</label>
+            <input type="number" id="dinner" placeholder="e.g., 10">
+          </div>
+          <div class="form-group">
+            <label for="bedtime">Bedtime Dosage:</label>
+            <input type="number" id="bedtime" placeholder="e.g., 10">
+          </div>
+          <div class="form-group">
+            <label for="remark">Remark Dosage (if any):</label>
+            <input type="number" id="remark" placeholder="Additional units">
+          </div>
+          <button type="button" onclick="calculateInsulin()">
+            <i class="fa-solid fa-calculator"></i> Calculate Total Insulin
+          </button>
+          <p id="result" class="output"></p>
+        </div>
+        
+        <div class="calc-section">
+          <h2><i class="fa-solid fa-heart-pulse"></i> Correction Dose Calculator</h2>
+          <div class="form-group">
+            <label for="currentBG">Current BG (mg/dL):</label>
+            <input type="number" id="currentBG" placeholder="e.g., 180">
+          </div>
+          <div class="form-group">
+            <label for="targetBG">Target BG (mg/dL):</label>
+            <input type="number" id="targetBG" placeholder="e.g., 100">
+          </div>
+          <button type="button" onclick="calculateCorrection()">
+            <i class="fa-solid fa-play"></i> Calculate Correction Dose
+          </button>
+          <p id="correctionResult" class="output"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
